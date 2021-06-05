@@ -37,7 +37,7 @@ export class SimpleActorSheet extends ActorSheet {
       this._prepareHunterRatings(data);
       this._prepareHunterItems(data);
     }
-
+    console.log(data);
     return data;
   }
 
@@ -48,6 +48,7 @@ export class SimpleActorSheet extends ActorSheet {
    */
   _prepareHunterRatings(sheetData) {
     let ratings = sheetData.actor.data.ratings;
+    console.log(ratings);
     for (let key in ratings) {
       if (ratings.hasOwnProperty(key)) {
         let rating = ratings[key];
@@ -154,7 +155,7 @@ export class SimpleActorSheet extends ActorSheet {
 	activateListeners(html) {
     super.activateListeners(html);
 
-    if (this.actor.owner) {
+    if (this.actor.isOwner) {
       // Roll when clicking the name of a rating.
       html.find('.rating .rollable').click(ev => this._onRatingRoll(ev));
     }

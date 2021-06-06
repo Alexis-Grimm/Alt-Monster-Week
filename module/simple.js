@@ -108,25 +108,26 @@ Hooks.once("init", async function() {
 
 // Override the default icons for items.
 Hooks.on("createItem", item => {
-  let MYSTERY_MAN_ICON = "icons/svg/mystery-man.svg";
+  //console.log(item);
+  let MYSTERY_MAN_ICON = "icons/svg/item-bag.svg";
 
   // TODO: Consolidate this with the similar list in actor-sheet.js.
   let DEFAULT_GEAR_ICON = "icons/svg/chest.svg";
   let DEFAULT_WEAPON_ICON = "icons/svg/combat.svg";
   let DEFAULT_ARMOR_ICON = "icons/svg/statue.svg";
   let DEFAULT_MOVE_ICON = "icons/svg/book.svg";
-
+  //console.log(item.data.type);
   var newImg = DEFAULT_GEAR_ICON;
-  if (item.type === "weapon") {
+  if (item.data.type === "weapon") {
     newImg = DEFAULT_WEAPON_ICON;
   }
-  else if (item.type === "armor") {
+  else if (item.data.type === "armor") {
     newImg = DEFAULT_ARMOR_ICON;
   }
-  else if (item.type === "move") {
+  else if (item.data.type === "move") {
     newImg = DEFAULT_MOVE_ICON;
   }
-
+  //console.log(item.data.img);
 	item.update({
     img: (!item.data.img || item.data.img === MYSTERY_MAN_ICON)
         ? newImg

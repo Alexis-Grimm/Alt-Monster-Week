@@ -37,7 +37,7 @@ export class SimpleActorSheet extends ActorSheet {
       this._prepareHunterRatings(data);
       this._prepareHunterItems(data);
     }
-    console.log(data);
+    //console.log(data);
     return data;
   }
 
@@ -47,14 +47,15 @@ export class SimpleActorSheet extends ActorSheet {
    * @param {Object} sheetData The sheet containing the actor to prepare.
    */
   _prepareHunterRatings(sheetData) {
-    let ratings = sheetData.actor.data.ratings;
-    console.log(ratings);
+    let ratings = sheetData.actor.data.data.ratings;
     for (let key in ratings) {
       if (ratings.hasOwnProperty(key)) {
         let rating = ratings[key];
+
         if (rating.hasOwnProperty("value") && rating.value > 0) {
-          rating.value = "+" + rating.value;
+          rating.value = rating.value;
         }
+
       }
     }
   }
@@ -135,7 +136,7 @@ export class SimpleActorSheet extends ActorSheet {
   _onItemNameClick(event) {
     event.preventDefault();
     let li = $(event.currentTarget).parents(".item");
-    let item = this.actor.getOwnedItem(li.data("item-id"));
+    let item = this.actor.items.get(li.data("item-id"));
 
     // Toggle summary
     if (li.hasClass("item-expanded")) {
@@ -199,20 +200,21 @@ export class SimpleActorSheet extends ActorSheet {
         img: entry.img,
         data: {},
       };
-      return this.actor.createOwnedItem(itemData);
+      return this.actor.createEmbeddedDocuments("Item", [itemData]);
     });
 
     // Update Inventory Item
     html.find('.item-edit').click(ev => {
       const li = $(ev.currentTarget).parents(".item");
-      const item = this.actor.getOwnedItem(li.data("itemId"));
+      const item = this.actor.items.get(li.data("itemId"));
       item.sheet.render(true);
     });
 
     // Delete Inventory Item
     html.find('.item-delete').click(ev => {
       const li = $(ev.currentTarget).parents(".item");
-      this.actor.deleteOwnedItem(li.data("itemId"));
+      const item = this.actor.items.get(li.data("itemId"));
+      if (item) return item.delete();
       li.slideUp(200, () => this.render(false));
     });
   }

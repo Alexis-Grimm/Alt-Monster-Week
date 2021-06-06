@@ -2,7 +2,6 @@
 .idea/
 .vs/
 .vscode/
-packs/
 
 # Node Modules
 node_modules/

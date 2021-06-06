@@ -29,7 +29,7 @@ export class SimpleItemSheet extends ItemSheet {
 
     data.isMove = data.item.type === "move";
     data.ratings = ["cool", "tough", "charm", "sharp", "weird"];
-
+    //console.log(data);
     return data;
   }
 

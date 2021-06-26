@@ -1,4 +1,4 @@
-# Monster of the Week
+# Alternate Monster of the Week
 
 A simple, unofficial [Foundry VTT](https://foundryvtt.com/) system for
 [Evil Hat Productions](https://www.evilhat.com/)'s [Monster of the
@@ -14,10 +14,10 @@ In your Foundry VTT instance:
 - Enter "Setup" mode
 - Go to the "Game Systems" tab
 - Click "Install System"
-- In the "Filter Packages" field in the upper right, search for "Monster/Week"
+- In the "Filter Packages" field in the upper right, search for "Alt Monster/Week"
 - Click "Install" on the entry that shows up
 
-See https://foundryvtt.com/packages/monsterweek/ for details about the Foundry package.
+There is currently not a foundry package for this version of monster/week
 
 ## Overview
 
@@ -51,7 +51,7 @@ This system is released under the MIT license described in
 [LICENSE.txt](LICENSE.txt), and its copyright belongs to its contributors.
 
 Forked from the [Simple Worldbuilding
-System](https://gitlab.com/foundrynet/worldbuilding).
+System](https://gitlab.com/foundrynet/worldbuilding). (This version is forked from [Dave Bort's Monster/Week](https://gitlab.com/3cell/monsterweek/activity))
 
 ## Screenshots
 
@@ -62,8 +62,8 @@ Create by creating an actor, and choosing "hunter" as the type.
 ![Hunter sheet](docs/images/hunter-sheet.png)
 
 To change the value of a rating ("Cool", "Tough", etc.), type in the number and
-hit enter. Rating values are restricted to the range from -1 to +3 based on the
-rules.
+hit enter. Rating values are not restricted to the range from -1 to +3 based on the
+rules, just in case you are using a house rule that can get you higher or lower.
 
 To roll, click the rating word ("Cool", etc.) at the top of the sheet. The
 chat message will tell you what kind of success/failure it was.
@@ -72,6 +72,7 @@ chat message will tell you what kind of success/failure it was.
 
 Increase or decrease marks on the Harm/Luck/etc. tracks by clicking on the left
 or right ends; no need to click on exactly the next box, though that works too.
+You can also click on one of the icons found on either side of the track, which move the track in their direction.
 
 The "Background" and "Bonuses/Holds" tabs are freeform text, for keeping track
 of stuff that isn't fully supported by the system.
@@ -105,17 +106,6 @@ sheet.
 
 ## Future features
 
-- Fonts:
-  - The book uses https://www.myfonts.com/fonts/protype/lavah-pro/grunge/
-    - Similar free fonts: https://www.dafont.com/theme.php?cat=107
-  - Handwriting fonts for the ratings values:
-    https://www.dafont.com/theme.php?cat=605&text=%2B1+-2+%2B3+0
-  - Typewriter fonts for names:
-    https://www.dafont.com/theme.php?cat=113&text=Kick+Some+Ass
-  - Copy text in the book:
-    https://www.myfonts.com/fonts/adobe/warnock/bold-capt/
-    - https://www.dafont.com/sling.font
-    - https://www.dafont.com/isle-body.font
 - Luck:
   - Add a spot for the hunter luck rules; maybe pop it up when clicking
     the "Luck" label. E.g., "Crooked special: Whenever you spend a Luck point,
@@ -123,6 +113,7 @@ sheet.
     (See "updated luck rules" playbooks at
     https://www.evilhat.com/home/monster-of-the-week-resources/)
 - Moves:
+  - Rolling from moves is a pretty important step, also want to structure them better.
   - Structure the 10+/7-9/fail text so it can be displayed in chat
   - Would be cool to automatically add holds, though that could get
     annoying if most of the holds are used immediately; may be better
@@ -131,7 +122,9 @@ sheet.
     added the move to the owner's list.
   - Leveling up can change basic moves to Advanced Moves (p122) which gives
     them extra effects on 12+.
-- Hunter specials
+- Weapons:
+  - Keep the freeform tag system but also include some predefined tag options that can also be ignored if preffered without things breaking, so that things like harm     and range can be treated better. Especially once you can display weapons in chat. 
+- Hunter specials:
   - The Hex's Rotes (spells). Could treat them as special
     moves, since they follow from Use Magic, or could create a new type
     of thing for them. Could still appear in the Moves tab, just under
@@ -140,9 +133,11 @@ sheet.
   - Spell-slinger has spells with tags, and some provide both harm and
     armor. A new category beyond armor/weapon/gear? Or do we mix them
     all together and maybe cluster by "magic", "#-harm", "#-armor", etc.
-- Armor
+- Armor:
   - Would be nice to roll up all armor into a single top-level view,
     adding all N-armor and highlight tags like 'magic'. Clicking on it
     would switch to the gear/armor tab.
-- Misc
+- Armor, Weapons, Gear:
+  - Allow gear of any kind to be displayed in chat, for easier access by dm's and for general memeness
+- Misc:
   - Big "DOOMED" stamp across avatar when luck is completely full

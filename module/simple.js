@@ -31,12 +31,12 @@ Hooks.once("init", async function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("monsterweek", MotwActorSheet, {
+  Actors.registerSheet("altmonsterweek", MotwActorSheet, {
     types: ["hunter", "bystander", "location", "minion", "monster"],
     makeDefault: true
   });
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("monsterweek", MotwItemSheet, {
+  Items.registerSheet("altmonsterweek", MotwItemSheet, {
     types: ["weapon", "armor", "gear", "move"],
     makeDefault: true
   });
@@ -202,7 +202,7 @@ Hooks.once('setup', async function() {
   // the image we patch in. Thanks to
   // https://github.com/schultzcole/FVTT-Default-Image-Overrider for this trick!
 	await Promise.all([
-		getTemplate("systems/monsterweek/templates/actors/actor-sheet.html"),
-		getTemplate("systems/monsterweek/templates/items/item-sheet.html"),
+		getTemplate("systems/altmonsterweek/templates/actors/actor-sheet.html"),
+		getTemplate("systems/altmonsterweek/templates/items/item-sheet.html"),
 	]);
 });

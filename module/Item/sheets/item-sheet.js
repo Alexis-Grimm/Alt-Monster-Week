@@ -7,8 +7,8 @@ export class MotwItemSheet extends ItemSheet {
   /** @override */
 	static get defaultOptions() {
 	  return mergeObject(super.defaultOptions, {
-			classes: ["monsterweek", "sheet", "item"],
-			template: "systems/monsterweek/templates/items/item-sheet.html",
+			classes: ["altmonsterweek", "sheet", "item"],
+			template: "systems/altmonsterweek/templates/items/item-sheet.html",
 			width: 520,
 			height: 480,
       tabs: [

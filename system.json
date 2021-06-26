@@ -1,205 +1,14 @@
 {
-  "name": "monsterweek",
-  "title": "Monster/Week",
-  "description": "A simple system for Monster of the Week.",
-  "version": "1.3.0",
-  "minimumCoreVersion": "0.8.6",
-  "compatibleCoreVersion": "0.8.6",
+  "name": "altmonsterweek",
+  "title": "Alt Monster/Week",
+  "description": "An updated system for Michael Sand's Revised Monster Of The Week, based on Dave Bort's system, which was based on Atropos' simple world building system",
+  "version": "0.1.0",
+  "minimumCoreVersion": "0.8.8",
+  "compatibleCoreVersion": "0.8.8",
   "templateVersion": 1,
-  "author": "Dave Bort <git@dbort.com>",
+  "author": "Alexis Grimm",
   "esmodules": ["module/simple.js"],
   "styles": ["styles/simple.css"],
-  "packs": [
-    {
-      "name": "playbook-templates",
-      "label": "Playbook Templates",
-      "system": "monsterweek",
-      "path": "./packs/playbook-templates.db",
-      "entity": "Actor"
-    },
-    {
-      "name": "basic-moves",
-      "label": "Basic Moves",
-      "system": "monsterweek",
-      "path": "./packs/basic-moves.db",
-      "entity": "Item"
-    },
-    {
-      "name": "chosen-moves",
-      "label": "Chosen: Moves",
-      "system": "monsterweek",
-      "path": "./packs/chosen-moves.db",
-      "entity": "Item"
-    },
-    {
-      "name": "crooked-background",
-      "label": "Crooked: Background",
-      "system": "monsterweek",
-      "path": "./packs/crooked-background.db",
-      "entity": "Item"
-    },
-    {
-      "name": "crooked-moves",
-      "label": "Crooked: Moves",
-      "system": "monsterweek",
-      "path": "./packs/crooked-moves.db",
-      "entity": "Item"
-    },
-    {
-      "name": "crooked-weapons",
-      "label": "Crooked: Weapons",
-      "system": "monsterweek",
-      "path": "./packs/crooked-weapons.db",
-      "entity": "Item"
-    },
-    {
-      "name": "divine-moves",
-      "label": "Divine: Moves",
-      "system": "monsterweek",
-      "path": "./packs/divine-moves.db",
-      "entity": "Item"
-    },
-    {
-      "name": "divine-weapons",
-      "label": "Divine: Weapons",
-      "system": "monsterweek",
-      "path": "./packs/divine-weapons.db",
-      "entity": "Item"
-    },
-    {
-      "name": "expert-weapons",
-      "label": "Expert: Weapons",
-      "system": "monsterweek",
-      "path": "./packs/expert-weapons.db",
-      "entity": "Item"
-    },
-    {
-      "name": "expert-moves",
-      "label": "Expert: Moves",
-      "system": "monsterweek",
-      "path": "./packs/expert-moves.db",
-      "entity": "Item"
-    },
-    {
-      "name": "expert-haven",
-      "label": "Expert: Haven",
-      "system": "monsterweek",
-      "path": "./packs/expert-haven.db",
-      "entity": "Item"
-    },
-    {
-      "name": "flake-moves",
-      "label": "Flake: Moves",
-      "system": "monsterweek",
-      "path": "./packs/flake-moves.db",
-      "entity": "Item"
-    },
-    {
-      "name": "flake-weapons",
-      "label": "Flake: Weapons",
-      "system": "monsterweek",
-      "path": "./packs/flake-weapons.db",
-      "entity": "Item"
-    },
-    {
-      "name": "initiate-moves",
-      "label": "Initiate: Moves",
-      "system": "monsterweek",
-      "path": "./packs/initiate-moves.db",
-      "entity": "Item"
-    },
-    {
-      "name": "initiate-weapons",
-      "label": "Initiate: Weapons",
-      "system": "monsterweek",
-      "path": "./packs/initiate-weapons.db",
-      "entity": "Item"
-    },
-    {
-      "name": "monstrous-moves",
-      "label": "Monstrous: Moves",
-      "system": "monsterweek",
-      "path": "./packs/monstrous-moves.db",
-      "entity": "Item"
-    },
-    {
-      "name": "monstrous-weapons",
-      "label": "Monstrous: Weapons",
-      "system": "monsterweek",
-      "path": "./packs/monstrous-weapons.db",
-      "entity": "Item"
-    },
-    {
-      "name": "mundane-moves",
-      "label": "Mundane: Moves",
-      "system": "monsterweek",
-      "path": "./packs/mundane-moves.db",
-      "entity": "Item"
-    },
-    {
-      "name": "mundane-weapons",
-      "label": "Mundane: Weapons",
-      "system": "monsterweek",
-      "path": "./packs/mundane-weapons.db",
-      "entity": "Item"
-    },
-    {
-      "name": "professional-moves",
-      "label": "Professional: Moves",
-      "system": "monsterweek",
-      "path": "./packs/professional-moves.db",
-      "entity": "Item"
-    },
-    {
-      "name": "professional-weapons",
-      "label": "Professional: Weapons",
-      "system": "monsterweek",
-      "path": "./packs/professional-weapons.db",
-      "entity": "Item"
-    },
-    {
-      "name": "spell-slinger-weapons",
-      "label": "Spell-Slinger: Weapons",
-      "system": "monsterweek",
-      "path": "./packs/spell-slinger-weapons.db",
-      "entity": "Item"
-    },
-    {
-      "name": "spell-slinger-moves",
-      "label": "Spell-Slinger: Moves",
-      "system": "monsterweek",
-      "path": "./packs/spell-slinger-moves.db",
-      "entity": "Item"
-    },
-    {
-      "name": "spooky-weapons",
-      "label": "Spooky: Weapons",
-      "system": "monsterweek",
-      "path": "./packs/spooky-weapons.db",
-      "entity": "Item"
-    },
-    {
-      "name": "spooky-moves",
-      "label": "Spooky: Moves",
-      "system": "monsterweek",
-      "path": "./packs/spooky-moves.db",
-      "entity": "Item"
-    },
-    {
-      "name": "wronged-moves",
-      "label": "Wronged: Moves",
-      "system": "monsterweek",
-      "path": "./packs/wronged-moves.db",
-      "entity": "Item"
-    },
-    {
-      "name": "wronged-weapons",
-      "label": "Wronged: Weapons",
-      "system": "monsterweek",
-      "path": "./packs/wronged-weapons.db",
-      "entity": "Item"
-    }
-  ],
   "languages": [
     {
       "lang": "en",
@@ -215,8 +24,7 @@
   "gridDistance": 5,
   "gridUnits": "ft",
   "primaryTokenAttribute": "harm",
-  "url": "https://gitlab.com/3cell/monsterweek/",
-  "manifest": "https://gitlab.com/3cell/monsterweek/-/raw/motw/system.json",
-  "download": "https://gitlab.com/3cell/monsterweek/-/archive/v1.2.1/monsterweek-v1.2.1.zip",
+  "url": "https://github.com/Alexis-Grimm/FoundryVTT-Monster-Of-The-Week",
+  "manifest": "https://raw.githubusercontent.com/Alexis-Grimm/FoundryVTT-Monster-Of-The-Week/motw/system.json",
   "license": "LICENSE.txt"
 }

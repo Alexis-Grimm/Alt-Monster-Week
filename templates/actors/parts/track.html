@@ -1,0 +1,52 @@
+{{!-- Example usage: valueName="harm" value=data.harm --}}
+<a class="track" data-value-name="{{valueName}}">
+    {{!-- TODO: Make unstable a {0..1} value and drop the special case --}}
+    {{#if (isBoolean value)}}
+        {{#if value}}
+            <span class="track-element marked">
+                <i class="fas fa-square"></i>
+            </span>
+        {{else}}
+            <span class="track-element unmarked">
+                <i class="far fa-square"></i>
+            </span>
+        {{/if}}
+    {{else}}
+        {{!-- It's a {min, value, max} object. --}}
+        {{#times value.max valueName}}
+            {{#if isXP}}
+                {{#if (lt timesIndex value.value)}}
+                    <span class="track-element marked">
+                        <i class="fas fa-square"></i>
+                    </span>
+                {{else}}
+                    <span class="track-element unmarked">
+                        <i class="far fa-square"></i>
+                    </span>
+                {{/if}}
+            {{else}}
+                {{#if bar}}
+                    {{#if (ltConnect timesIndex value.value)}}
+                        <span class="track-element marked">
+                            <i class="far fa-square harm-divider"></i>
+                        </span>
+                    {{else}}
+                        <span class="track-element unmarked">
+                            <i class="fas fa-square harm-divider"></i>
+                        </span>
+                    {{/if}}
+                {{else}}
+                    {{#if (ltConnect timesIndex value.value)}}
+                        <span class="track-element marked">
+                            <i class="far fa-square"></i>
+                        </span>
+                    {{else}}
+                        <span class="track-element unmarked">
+                            <i class="fas fa-square"></i>
+                        </span>
+                    {{/if}}
+                {{/if}}
+            {{/if}}
+        {{/times}}
+    {{/if}}
+</a>

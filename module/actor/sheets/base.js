@@ -7,8 +7,8 @@ export class MotwActorSheet extends ActorSheet {
   /** @override */
 	static get defaultOptions() {
 	  return mergeObject(super.defaultOptions, {
-  	  classes: ["monsterweek", "sheet", "actor"],
-  	  template: "systems/monsterweek/templates/actors/actor-sheet.html",
+  	  classes: ["altmonsterweek", "sheet", "actor"],
+  	  template: "systems/altmonsterweek/templates/actors/actor-sheet.html",
       width: 600,
       height: 600,
       tabs: [

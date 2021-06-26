@@ -7,7 +7,7 @@ export const preloadHandlebarsTemplates = async function() {
 
   // Define template paths to load
   const templatePaths = [
-    "systems/monsterweek/templates/actors/parts/track.html"
+    "systems/altmonsterweek/templates/actors/parts/track.html"
   ];
 
   // Load the template parts

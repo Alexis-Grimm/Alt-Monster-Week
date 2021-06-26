@@ -1,5 +1,5 @@
 {
-  "name": "monsterweek",
+  "name": "altmonsterweek",
   "version": "1.0.0",
   "description": "CSS compiler for the Monster of the Week system",
   "scripts": {
@@ -23,6 +23,6 @@
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/3cell/monsterweek.git"
+    "url": "https://github.com/Alexis-Grimm/FoundryVTT-Monster-Of-The-Week.git"
   }
 }

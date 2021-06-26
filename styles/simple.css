@@ -22,7 +22,7 @@
   src: url(../fonts/Source_Serif_Pro/SourceSerifPro-SemiBold.ttf) format("truetype");
 }
 
-.monsterweek {
+.altmonsterweek {
   --light-color: 							rgba(0, 0, 0, .25);
   --faint-color:              rgba(0, 0, 0, .1);
   --label-font: "3rd Man Font";
@@ -33,13 +33,13 @@
   /* Items List */
   /* Chips */
 }
-.monsterweek .window-content {
+.altmonsterweek .window-content {
   height: 100%;
   padding: 5px;
   overflow-y: hidden;
-  background: url("/systems/monsterweek/images/ui/paper-512.jpg") repeat;
+  background: url("/systems/altmonsterweek/images/ui/paper-512.jpg") repeat;
 }
-.monsterweek .sheet-header {
+.altmonsterweek .sheet-header {
   height: 110px;
   overflow: hidden;
   display: flex;
@@ -48,27 +48,27 @@
   justify-content: flex-start;
   margin-bottom: 10px;
 }
-.monsterweek .sheet-header .profile-img {
+.altmonsterweek .sheet-header .profile-img {
   flex: 0 0 110px;
   height: 110px;
   margin-right: 10px;
 }
-.monsterweek .sheet-header .header-fields {
+.altmonsterweek .sheet-header .header-fields {
   flex: 1;
   height: 110px;
 }
-.monsterweek input {
+.altmonsterweek input {
   border: 1px solid transparent;
   border-radius: 3px;
 }
-.monsterweek .sheet-header h1.charname {
+.altmonsterweek .sheet-header h1.charname {
   /* height: 55px; */
   /* padding: 0px; */
   /* margin: 5px 0; */
   border-bottom: 1px solid var(--light-color);
   margin-bottom: .5rem;
 }
-.monsterweek .sheet-header h1.charname input {
+.altmonsterweek .sheet-header h1.charname input {
   width: 50%;
   height: 100%;
   margin: 1px;
@@ -76,17 +76,17 @@
   font-family: var(--label-font);
   font-size: xx-large;
 }
-.monsterweek .rating {
+.altmonsterweek .rating {
   text-align: center;
   border-left: 1px solid var(--faint-color);
   padding: 0 5px;
 }
-.monsterweek .rating label {
+.altmonsterweek .rating label {
   font-size: x-large;
   line-height: 1;
   font-family: var(--label-font);
 }
-.monsterweek .rating label::after {
+.altmonsterweek .rating label::after {
   display: block;
   content: '';
   /* height: 0; */
@@ -97,68 +97,68 @@
   /* left: 50%; */
   transform: translate(50%, 0);
 }
-.monsterweek .rating input {
+.altmonsterweek .rating input {
   background: none;
   width: 50%;
   font-size: x-large;
   font-family: var(--label-font);
 }
-.monsterweek .hunter-status {
+.altmonsterweek .hunter-status {
   overflow: hidden;
   flex-wrap: nowrap;
   margin-bottom: 10px;
 }
-.monsterweek .hunter-status div {
+.altmonsterweek .hunter-status div {
   text-align: center;
   flex: auto;
 }
-.monsterweek .hunter-status div.track-block i.icon {
+.altmonsterweek .hunter-status div.track-block i.icon {
   color: #7a7971
 }
-/* .monsterweek .hunter-status div.track-block a::before {
+/* .altmonsterweek .hunter-status div.track-block a::before {
   content: "Truth";
 }
-.monsterweek .hunter-status div.track-block a::after {
+.altmonsterweek .hunter-status div.track-block a::after {
   content: "Test";
 } */
-.monsterweek .hunter-status label.header {
+.altmonsterweek .hunter-status label.header {
   font-weight: 600;
   text-transform: uppercase;
   font-family: var(--test-font);
 }
-.monsterweek .track {
+.altmonsterweek .track {
   white-space: nowrap;
 }
-.monsterweek .track span i.harm-divider {
+.altmonsterweek .track span i.harm-divider {
   border-right: 1px solid #191813;
   padding-right: 2.5px;
 }
-.monsterweek .sheet-body {
+.altmonsterweek .sheet-body {
   border-top: 1px solid #AAA;
 }
-.monsterweek .tabs .item {
+.altmonsterweek .tabs .item {
   line-height: 40px;
   font-weight: bold;
 }
-.monsterweek .tabs .item.active {
+.altmonsterweek .tabs .item.active {
   text-decoration: underline;
   text-shadow: none;
 }
-.monsterweek .tab-content {
+.altmonsterweek .tab-content {
   overflow: hidden;
 }
-.monsterweek .tab-content .tab {
+.altmonsterweek .tab-content .tab {
   height: 100%;
   overflow-y: auto;
 }
-.monsterweek .editor,
-.monsterweek .editor-content {
+.altmonsterweek .editor,
+.altmonsterweek .editor-content {
   height: 100%;
 }
-.monsterweek img {
+.altmonsterweek img {
   background-color: black;
 }
-.monsterweek .inventory-list {
+.altmonsterweek .inventory-list {
   list-style: none;
   margin: 0;
   padding: 0 5px;
@@ -166,7 +166,7 @@
   scrollbar-width: thin;
   color: #7a7971;
 }
-.monsterweek .inventory-list .inventory-header {
+.altmonsterweek .inventory-list .inventory-header {
   margin: 2px 0;
   padding: 0;
   align-items: center;
@@ -175,7 +175,7 @@
   font-weight: bold;
   line-height: 24px;
 }
-.monsterweek .inventory-list .inventory-header h3 {
+.altmonsterweek .inventory-list .inventory-header h3 {
   margin: 0 -5px 0 0;
   padding-left: 5px;
   color: #191813;
@@ -183,43 +183,43 @@
   font-weight: 700;
   font-size: 16px;
 }
-.monsterweek .inventory-list .item-controls {
+.altmonsterweek .inventory-list .item-controls {
   flex: 0 0 18px;
   justify-content: flex-end;
 }
-.monsterweek .inventory-list .item-controls a {
+.altmonsterweek .inventory-list .item-controls a {
   flex: 0 0 22px;
   font-size: 12px;
   text-align: center;
 }
-.monsterweek .item-list {
+.altmonsterweek .item-list {
   list-style: none;
   margin: 7px 0;
   padding: 0;
   overflow-y: auto;
 }
-.monsterweek .item-list .item {
+.altmonsterweek .item-list .item {
   min-height: 30px;
   line-height: 24px;
   padding: 3px 0;
   border-bottom: 1px solid #BBB;
   align-items: stretch;
 }
-.monsterweek .item-list .item img {
+.altmonsterweek .item-list .item img {
   flex: 0 0 24px;
   margin-right: 5px;
 }
-.monsterweek .item-list .item-name {
+.altmonsterweek .item-list .item-name {
   margin: 0;
   color: #191813;
 }
-.monsterweek .item-list .item-name:hover {
+.altmonsterweek .item-list .item-name:hover {
   text-shadow: 0 0 10px red;
 }
-.monsterweek .item-list .item-controls {
+.altmonsterweek .item-list .item-controls {
   flex: 0 0 36px;
 }
-.monsterweek .item-list .item-buttons {
+.altmonsterweek .item-list .item-buttons {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -227,20 +227,20 @@
   flex: 2;
   justify-content: flex-start;
 }
-.monsterweek .item-list .item-button {
+.altmonsterweek .item-list .item-button {
   line-height: 1;
   font-size: 11px;
   flex: none;
   width: auto;
 }
-.monsterweek .item-list .item-summary {
+.altmonsterweek .item-list .item-summary {
   flex: 0 0 100%;
   font-size: 12px;
   line-height: 16px;
   padding: 0.25em 0.5em;
   color: #191813;
 }
-.monsterweek .chip {
+.altmonsterweek .chip {
   display: inline-block;
   margin: 0 2px 0 0;
   padding: 0 3px;
@@ -250,11 +250,11 @@
   border-radius: 3px;
   background: rgba(0, 0, 0, 0.05);
 }
-.monsterweek.sheet.actor {
+.altmonsterweek.sheet.actor {
   min-width: 560px;
   min-height: 420px;
 }
-.monsterweek.sheet.item {
+.altmonsterweek.sheet.item {
   min-width: 460px;
   min-height: 400px;
 }

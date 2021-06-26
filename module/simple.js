@@ -6,9 +6,9 @@
  */
 
 // Import Modules
-import { SimpleActor } from "./actor.js";
-import { SimpleItemSheet } from "./item-sheet.js";
-import { SimpleActorSheet } from "./actor-sheet.js";
+import { SimpleActor } from "./actor/actor.js";
+import { MotwItemSheet } from "./Item/sheets/item-sheet.js";
+import { MotwActorSheet } from "./actor/sheets/base.js";
 import { preloadHandlebarsTemplates } from "./templates.js";
 
 /* -------------------------------------------- */
@@ -31,12 +31,12 @@ Hooks.once("init", async function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("monsterweek", SimpleActorSheet, {
+  Actors.registerSheet("monsterweek", MotwActorSheet, {
     types: ["hunter", "bystander", "location", "minion", "monster"],
     makeDefault: true
   });
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("monsterweek", SimpleItemSheet, {
+  Items.registerSheet("monsterweek", MotwItemSheet, {
     types: ["weapon", "armor", "gear", "move"],
     makeDefault: true
   });
@@ -55,12 +55,42 @@ Hooks.once("init", async function() {
    * Repeat a block N times, setting `timesIndex` to the index of each
    * iteration. From https://stackoverflow.com/a/11924998
    */
-  Handlebars.registerHelper('times', function(n, block) {
-    var accum = '';
-    for(var i = 0; i < n; ++i) {
+  Handlebars.registerHelper('times', function(n, type, block) {
+    let accum = '';
+    //console.log(type);
+
+    if (type == "experience") {
+
+      this.isXP = true;
+      for(let i = 0; i < n; i++) {
         this.timesIndex = i;
         accum += block.fn(this);
+      }
+
+    } else if (type == "harm") {
+
+      this.isXP = false;
+      for(let i = n; i > 0; i--) {
+        if (i == 6) {
+          this.bar = true;
+        } else {
+          this.bar = false;
+        }
+        this.timesIndex = i;
+        accum += block.fn(this);
+      }
+  
+    } else {
+      
+      this.isXP = false;
+      for(let i = n; i > 0; i--) {
+        this.timesIndex = i;
+        accum += block.fn(this);
+      }
+
     }
+
+    //console.log(this.isXP);
     return accum;
   });
 
@@ -69,6 +99,10 @@ Hooks.once("init", async function() {
    */
   Handlebars.registerHelper('lt', function(a, b) {
     return a < b;
+  });
+
+  Handlebars.registerHelper('ltConnect', function(a, b) {
+    return a <= b;
   });
 
   /**
@@ -98,6 +132,34 @@ Hooks.once("init", async function() {
       return [];
     }
     return parts;
+  });
+
+  /**
+   * Tests if the input data type is the same as the type.
+   */
+  Handlebars.registerHelper('isType', function(type, input) {
+    //console.log(input);
+    return type == input;
+  });
+
+  /**
+   * Repeat a block N times, setting `timesIndex` to the index of each
+   * iteration. From https://stackoverflow.com/a/11924998
+   */
+  Handlebars.registerHelper('timesHarm', function(n, block) {
+    var accum = '';
+    
+    for(let i = 0; i < n; i++) {
+      if (i == 2) {
+        this.bar = true;
+      } else {
+        this.bar = false;
+      }
+      this.timesIndex = i;
+      accum += block.fn(this);
+    }
+
+    return accum;
   });
 
   // Preload template partials.
@@ -140,7 +202,7 @@ Hooks.once('setup', async function() {
   // the image we patch in. Thanks to
   // https://github.com/schultzcole/FVTT-Default-Image-Overrider for this trick!
 	await Promise.all([
-		getTemplate("systems/monsterweek/templates/actor-sheet.html"),
-		getTemplate("systems/monsterweek/templates/item-sheet.html"),
+		getTemplate("systems/monsterweek/templates/actors/actor-sheet.html"),
+		getTemplate("systems/monsterweek/templates/items/item-sheet.html"),
 	]);
 });

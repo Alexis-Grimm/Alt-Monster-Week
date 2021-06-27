@@ -1,14 +1,62 @@
+//Fonts
+@font-face {
+  font-family: 'Signika';
+  src: url("../../../fonts/signika/signika-light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Signika';
+  src: url("../../../fonts/signika/signika-semibold.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: '3rd Man Font';
+  src: url(../fonts/3rd_man/3rdMan.otf) format("opentype");
+}
+
+@font-face {
+  font-family: 'Source Serif Test';
+  src: url(../fonts/Source_Serif_Pro/SourceSerifPro-SemiBold.ttf) format("truetype");
+}
+
+//Color Variables
+@light-color: rgba(0, 0, 0, .25);
+@faint-color: rgba(0, 0, 0, .1);
+@primary-color: rgba(0, 0, 0, 0.9);
+@secondary-color: rgba(0, 0, 0, .65);
+@tertiary-color: rgba(0, 0, 0, .4);
+@background-color: rgba(236, 233, 233, 1);
+@glow-color: #880808;
+//Font Variables
+@label-font: "3rd Man Font";
+@test-font: "Source Serif Pro";
+@modesto: "Modesto Condensed", "Palatino Linotype", serif;
+@signika: "Signika", sans-serif;
+//Misc Variables
+@sheet-header-height: 110px;
+//Mixins
+
 .altmonsterweek {
+  
   .window-content {
     height: 100%;
     padding: 5px;
     overflow-y: hidden;
-    background: url("/systems/altmonsterweek/images/ui/paper-512.jpg") repeat;
+    //background: url("/systems/altmonsterweek/images/ui/paper-512.jpg") repeat;
+  }
+
+  .rollable, a {
+    &:hover {
+      text-shadow: none;
+      color: @glow-color;
+    }
   }
 
   .sheet-header {
-    @sheet-header-height: 110px;
-
     height: @sheet-header-height;
     overflow: hidden;
     display: flex;
@@ -29,25 +77,40 @@
     }
 
     h1.charname {
-      height: @sheet-header-height / 2;
-      padding: 0px;
-      margin: 5px 0;
-      border-bottom: 0;
+      margin-bottom: .5rem;
+      border-bottom: 1px solid @faint-color;
       input {
-        width: 100%;
+        width: 50%;
         height: 100%;
-        margin: 0;
+        margin: 1px;
+        background: none;
+        font-family: @label-font;
+        font-size: xx-large;
       }
     }
   }
 
   .rating {
     text-align: center;
+    border-left: 1px solid @faint-color;
+    padding: 0 5px;
     label {
-      font-weight: bold;
+      font-size: x-large;
+      line-height: 1;
+      font-family: @label-font;
+      &::after {
+        display: block;
+        content: '';
+        width: 50%;
+        border-bottom: 1px solid @faint-color;
+        transform: translate(50%, 0);
+      }
     }
     input {
-      border: none;
+      background: none;
+      width: 50%;
+      font-size: x-large;
+      font-family: @label-font;
     }
   }
 
@@ -55,31 +118,57 @@
     overflow: hidden;
     flex-wrap: nowrap;
     margin-bottom: 10px;
-    padding: 0 10px;
+
+    div {
+      text-align: center;
+      flex: auto;
+      &.track-block i.icon {
+        color: #7a7971;
+        &:hover {
+          text-shadow: none;
+          color: @glow-color;
+        }
+      }
+    }
 
     label.header {
-      font-weight: bold;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-family: @test-font;
     }
   }
 
   .track {
     white-space: nowrap;  // Don't break between boxes
+    span i.harm-divider {
+      border-right: 1px solid #191813;
+      padding-right: 2.5px;
+    }
   }
 
-  .sheet-body {
-    border-top: 1px solid #AAA;
+  //.sheet-body {
+    //border-top: 1px solid #AAA;
+  //}
+
+  input {
+    border: 1px solid transparent;
+    border-radius: 3px;
+    &:hover, &:focus {
+      box-shadow: 0px 0px 0px 1px @glow-color inset;
+    }
   }
 
   /* Sheet Tabs */
   .tabs {
     .item {
       line-height: 40px;
-      font-weight: bold;
+      font-weight: 400;
     }
 
     .item.active {
       text-decoration: underline;
       text-shadow: none;
+      font-weight: 900;
     }
   }
 
@@ -153,9 +242,16 @@
       border-bottom: 1px solid #BBB;
       align-items: stretch;
 
-      img {
+      .image-div {
         flex: 0 0 24px;
         margin-right: 5px;
+        display: grid;
+        background-repeat: no-repeat;
+        background-size: cover;
+        .item-image i {
+          color: @tertiary-color;
+          display: none;
+        }
       }
     }
 

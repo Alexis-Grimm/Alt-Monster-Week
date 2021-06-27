@@ -4,31 +4,21 @@
   font-weight: 300;
   font-style: normal;
 }
-
 @font-face {
   font-family: 'Signika';
   src: url("../../../fonts/signika/signika-semibold.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
 }
-
 @font-face {
   font-family: '3rd Man Font';
   src: url(../fonts/3rd_man/3rdMan.otf) format("opentype");
 }
-
 @font-face {
   font-family: 'Source Serif Test';
   src: url(../fonts/Source_Serif_Pro/SourceSerifPro-SemiBold.ttf) format("truetype");
 }
-
 .altmonsterweek {
-  --light-color: 							rgba(0, 0, 0, .25);
-  --faint-color:              rgba(0, 0, 0, .1);
-  --label-font: "3rd Man Font";
-  --test-font: "Source Serif Pro";
-  --modesto: "Modesto Condensed", "Palatino Linotype", serif;
-  --signika: "Signika", sans-serif;
   /* Sheet Tabs */
   /* Items List */
   /* Chips */
@@ -37,7 +27,11 @@
   height: 100%;
   padding: 5px;
   overflow-y: hidden;
-  background: url("/systems/altmonsterweek/images/ui/paper-512.jpg") repeat;
+}
+.altmonsterweek .rollable:hover,
+.altmonsterweek a:hover {
+  text-shadow: none;
+  color: #880808;
 }
 .altmonsterweek .sheet-header {
   height: 110px;
@@ -57,51 +51,40 @@
   flex: 1;
   height: 110px;
 }
-.altmonsterweek input {
-  border: 1px solid transparent;
-  border-radius: 3px;
-}
 .altmonsterweek .sheet-header h1.charname {
-  /* height: 55px; */
-  /* padding: 0px; */
-  /* margin: 5px 0; */
-  border-bottom: 1px solid var(--light-color);
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .altmonsterweek .sheet-header h1.charname input {
   width: 50%;
   height: 100%;
   margin: 1px;
   background: none;
-  font-family: var(--label-font);
+  font-family: "3rd Man Font";
   font-size: xx-large;
 }
 .altmonsterweek .rating {
   text-align: center;
-  border-left: 1px solid var(--faint-color);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0 5px;
 }
 .altmonsterweek .rating label {
   font-size: x-large;
   line-height: 1;
-  font-family: var(--label-font);
+  font-family: "3rd Man Font";
 }
 .altmonsterweek .rating label::after {
   display: block;
   content: '';
-  /* height: 0; */
   width: 50%;
-  border-bottom: 1px solid var(--faint-color);
-  /* position: absolute; */
-  /* bottom: -1px; */
-  /* left: 50%; */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   transform: translate(50%, 0);
 }
 .altmonsterweek .rating input {
   background: none;
   width: 50%;
   font-size: x-large;
-  font-family: var(--label-font);
+  font-family: "3rd Man Font";
 }
 .altmonsterweek .hunter-status {
   overflow: hidden;
@@ -113,18 +96,16 @@
   flex: auto;
 }
 .altmonsterweek .hunter-status div.track-block i.icon {
-  color: #7a7971
+  color: #7a7971;
 }
-/* .altmonsterweek .hunter-status div.track-block a::before {
-  content: "Truth";
+.altmonsterweek .hunter-status div.track-block i.icon:hover {
+  text-shadow: none;
+  color: #880808;
 }
-.altmonsterweek .hunter-status div.track-block a::after {
-  content: "Test";
-} */
 .altmonsterweek .hunter-status label.header {
   font-weight: 600;
   text-transform: uppercase;
-  font-family: var(--test-font);
+  font-family: "Source Serif Pro";
 }
 .altmonsterweek .track {
   white-space: nowrap;
@@ -133,16 +114,22 @@
   border-right: 1px solid #191813;
   padding-right: 2.5px;
 }
-.altmonsterweek .sheet-body {
-  border-top: 1px solid #AAA;
+.altmonsterweek input {
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+.altmonsterweek input:hover,
+.altmonsterweek input:focus {
+  box-shadow: 0px 0px 0px 1px #880808 inset;
 }
 .altmonsterweek .tabs .item {
   line-height: 40px;
-  font-weight: bold;
+  font-weight: 400;
 }
 .altmonsterweek .tabs .item.active {
   text-decoration: underline;
   text-shadow: none;
+  font-weight: 900;
 }
 .altmonsterweek .tab-content {
   overflow: hidden;
@@ -205,9 +192,16 @@
   border-bottom: 1px solid #BBB;
   align-items: stretch;
 }
-.altmonsterweek .item-list .item img {
+.altmonsterweek .item-list .item .image-div {
   flex: 0 0 24px;
   margin-right: 5px;
+  display: grid;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.altmonsterweek .item-list .item .image-div .item-image i {
+  color: rgba(0, 0, 0, 0.4);
+  display: none;
 }
 .altmonsterweek .item-list .item-name {
   margin: 0;

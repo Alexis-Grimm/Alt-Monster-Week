@@ -13,15 +13,10 @@ export class MotwActorSheet extends ActorSheet {
       height: 600,
       tabs: [
         {
-          navSelector: ".tab-nav-left",
-          contentSelector: ".tab-content-left",
+          navSelector: ".sheet-tabs",
+          contentSelector: ".sheet-body",
           initial: "moves",
-        },
-        {
-          navSelector: ".tab-nav-right",
-          contentSelector: ".tab-content-right",
-          initial: "gear",
-        },
+        }
       ],
       dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}]
     });

@@ -13,7 +13,7 @@ export class MotwActorSheet extends ActorSheet {
       height: 600,
       tabs: [
         {
-          navSelector: ".sheet-tabs",
+          navSelector: ".motw-tabs",
           contentSelector: ".sheet-body",
           initial: "moves",
         }

@@ -71,7 +71,7 @@
     </section>
 
     {{!-- Hunter Tabs --}}
-    <nav class="sheet-tabs tabs">
+    <nav class="motw-tabs tabs" data-group="primary">
         <a class="item" data-tab="moves" primary="true">
             {{localize "MOTW.Moves"}}
         </a>
@@ -87,7 +87,7 @@
     <section class="sheet-body flexrow">
         {{!-- Tabs --}}
         {{!-- Moves Tab --}}
-        <div class="tab moves" data-tab="moves">
+        <div class="tab moves" data-group="primary" data-tab="moves">
             <ol class="inventory-list">
                 <li class="inventory-header flexrow">
                     <h3 class="item">{{localize "MOTW.Moves"}}</h3>
@@ -127,12 +127,12 @@
         </div>
 
         {{!-- Background Tab --}}
-        <div class="tab background" data-tab="background">
+        <div class="tab background" data-group="primary" data-tab="background">
             {{editor content=data.data.background target="data.background" button=true owner=owner editable=editable}}
         </div>
 
         {{!-- Owned Gear Tab --}}
-        <div class="tab gear" data-tab="gear">
+        <div class="tab gear" data-group="primary" data-tab="gear">
             <ol class="inventory-list">
                 {{#each actor.allGear as |section id|}}
                 <li class="inventory-header flexrow">

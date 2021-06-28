@@ -24,12 +24,17 @@
 }
 
 //Color Variables
-@light-color: rgba(0, 0, 0, .25);
-@faint-color: rgba(0, 0, 0, .1);
+@light-color: rgba(0, 0, 0, 0.25);
+@faint-color: rgba(0, 0, 0, 0.1);
 @primary-color: rgba(0, 0, 0, 0.9);
-@secondary-color: rgba(0, 0, 0, .65);
-@tertiary-color: rgba(0, 0, 0, .4);
+@secondary-color: rgba(0, 0, 0, 0.65);
+@tertiary-color: rgba(0, 0, 0, 0.4);
+@body-color: rgba(0, 0, 0, 0);
+@li-color: rgba();
+@lhead-color: rgba();
 @background-color: rgba(236, 233, 233, 1);
+@headerback-color: rgba(255, 255, 255, 0.2);
+@header-border: rgba(0, 0, 0, .25);
 @glow-color: #880808;
 //Font Variables
 @label-font: "3rd Man Font";
@@ -44,12 +49,23 @@
   
   .window-content {
     height: 100%;
-    padding: 5px;
+    padding: 0;
+    margin: 0;
     overflow-y: hidden;
+    color: @primary-color;
+    font-family: @signika;
     //background: url("/systems/altmonsterweek/images/ui/paper-512.jpg") repeat;
+    form {
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
   }
 
   .rollable, a {
+    cursor: pointer;
     &:hover {
       text-shadow: none;
       color: @glow-color;
@@ -63,7 +79,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin-bottom: 10px;
+    background-color: @headerback-color;
+    padding: 5px 5px 10px 5px;
 
     .profile-img {
       flex: 0 0 @sheet-header-height;
@@ -74,51 +91,50 @@
     .header-fields {
       flex: 1;
       height: @sheet-header-height;
-    }
-
-    h1.charname {
-      margin-bottom: .5rem;
-      border-bottom: 1px solid @faint-color;
-      input {
-        width: 50%;
-        height: 100%;
-        margin: 1px;
-        background: none;
-        font-family: @label-font;
-        font-size: xx-large;
+      .rating {
+        text-align: center;
+        border-left: 1px solid @faint-color;
+        padding: 0 5px;
+        label {
+          font-size: x-large;
+          line-height: 1;
+          font-family: @label-font;
+          &::after {
+            display: block;
+            content: '';
+            width: 50%;
+            border-bottom: 1px solid @faint-color;
+            transform: translate(50%, 0);
+          }
+        }
+        input {
+          background: none;
+          width: 50%;
+          font-size: x-large;
+          font-family: @label-font;
+        }
       }
-    }
-  }
-
-  .rating {
-    text-align: center;
-    border-left: 1px solid @faint-color;
-    padding: 0 5px;
-    label {
-      font-size: x-large;
-      line-height: 1;
-      font-family: @label-font;
-      &::after {
-        display: block;
-        content: '';
-        width: 50%;
+      h1.charname {
+        margin-bottom: .5rem;
         border-bottom: 1px solid @faint-color;
-        transform: translate(50%, 0);
+        input {
+          width: 50%;
+          height: 100%;
+          margin: 1px;
+          background: none;
+          font-family: @label-font;
+          font-size: xx-large;
+        }
       }
-    }
-    input {
-      background: none;
-      width: 50%;
-      font-size: x-large;
-      font-family: @label-font;
     }
   }
 
   .hunter-status {
     overflow: hidden;
     flex-wrap: nowrap;
-    margin-bottom: 10px;
-
+    //margin-bottom: 10px;
+    background-color: @headerback-color;
+    padding: 10px 0 5px 0;
     div {
       text-align: center;
       flex: auto;
@@ -146,13 +162,21 @@
     }
   }
 
-  //.sheet-body {
-    //border-top: 1px solid #AAA;
-  //}
+  .sheet-body {
+    //background-color: @background-color;
+  }
 
   input {
+    padding: 0;
     border: 1px solid transparent;
     border-radius: 3px;
+    background: none;
+    transition: background .3s ease, border-color .3s ease;
+    button, select {
+      cursor: pointer;
+      box-shadow: none;
+      color: @primary-color;
+    }
     &:hover, &:focus {
       box-shadow: 0px 0px 0px 1px @glow-color inset;
     }
@@ -160,15 +184,42 @@
 
   /* Sheet Tabs */
   .tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
     .item {
-      line-height: 40px;
-      font-weight: 400;
-    }
-
-    .item.active {
-      text-decoration: underline;
-      text-shadow: none;
-      font-weight: 900;
+      padding: 5px 8px 0 8px;
+      background: @headerback-color;
+      border: 1px solid transparent;
+      border-bottom: 1px solid @header-border;
+      font-size: 14px;
+      text-align: left;
+      height: 26px;
+      flex: 1 1 auto;
+      &:first-child {
+        padding-left: 16px;
+        &.active {
+          border-left-color: transparent;
+        }
+      }
+      &:last-child.active {
+        border-right-color: transparent;
+      }
+      &.active {
+        //text-decoration: underline;
+        background: transparent;
+        text-shadow: none;
+        font-weight: 700;
+        border: 1px solid @light-color;
+        border-bottom-color: transparent;
+        cursor: default;
+        text-shadow: none;
+        &:hover {
+          color: inherit;
+        }
+      }
     }
   }
 

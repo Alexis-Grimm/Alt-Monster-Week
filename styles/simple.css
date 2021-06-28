@@ -25,8 +25,22 @@
 }
 .altmonsterweek .window-content {
   height: 100%;
-  padding: 5px;
+  padding: 0;
+  margin: 0;
   overflow-y: hidden;
+  color: rgba(0, 0, 0, 0.9);
+  font-family: "Signika", sans-serif;
+}
+.altmonsterweek .window-content form {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.altmonsterweek .rollable,
+.altmonsterweek a {
+  cursor: pointer;
 }
 .altmonsterweek .rollable:hover,
 .altmonsterweek a:hover {
@@ -40,7 +54,8 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 5px 5px 10px 5px;
 }
 .altmonsterweek .sheet-header .profile-img {
   flex: 0 0 110px;
@@ -51,11 +66,34 @@
   flex: 1;
   height: 110px;
 }
-.altmonsterweek .sheet-header h1.charname {
+.altmonsterweek .sheet-header .header-fields .rating {
+  text-align: center;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0 5px;
+}
+.altmonsterweek .sheet-header .header-fields .rating label {
+  font-size: x-large;
+  line-height: 1;
+  font-family: "3rd Man Font";
+}
+.altmonsterweek .sheet-header .header-fields .rating label::after {
+  display: block;
+  content: '';
+  width: 50%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transform: translate(50%, 0);
+}
+.altmonsterweek .sheet-header .header-fields .rating input {
+  background: none;
+  width: 50%;
+  font-size: x-large;
+  font-family: "3rd Man Font";
+}
+.altmonsterweek .sheet-header .header-fields h1.charname {
   margin-bottom: 0.5rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-.altmonsterweek .sheet-header h1.charname input {
+.altmonsterweek .sheet-header .header-fields h1.charname input {
   width: 50%;
   height: 100%;
   margin: 1px;
@@ -63,33 +101,11 @@
   font-family: "3rd Man Font";
   font-size: xx-large;
 }
-.altmonsterweek .rating {
-  text-align: center;
-  border-left: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 0 5px;
-}
-.altmonsterweek .rating label {
-  font-size: x-large;
-  line-height: 1;
-  font-family: "3rd Man Font";
-}
-.altmonsterweek .rating label::after {
-  display: block;
-  content: '';
-  width: 50%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  transform: translate(50%, 0);
-}
-.altmonsterweek .rating input {
-  background: none;
-  width: 50%;
-  font-size: x-large;
-  font-family: "3rd Man Font";
-}
 .altmonsterweek .hunter-status {
   overflow: hidden;
   flex-wrap: nowrap;
-  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px 0 5px 0;
 }
 .altmonsterweek .hunter-status div {
   text-align: center;
@@ -115,21 +131,58 @@
   padding-right: 2.5px;
 }
 .altmonsterweek input {
+  padding: 0;
   border: 1px solid transparent;
   border-radius: 3px;
+  background: none;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.altmonsterweek input button,
+.altmonsterweek input select {
+  cursor: pointer;
+  box-shadow: none;
+  color: rgba(0, 0, 0, 0.9);
 }
 .altmonsterweek input:hover,
 .altmonsterweek input:focus {
   box-shadow: 0px 0px 0px 1px #880808 inset;
 }
+.altmonsterweek .tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 .altmonsterweek .tabs .item {
-  line-height: 40px;
-  font-weight: 400;
+  padding: 5px 8px 0 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  font-size: 14px;
+  text-align: left;
+  height: 26px;
+  flex: 1 1 auto;
+}
+.altmonsterweek .tabs .item:first-child {
+  padding-left: 16px;
+}
+.altmonsterweek .tabs .item:first-child.active {
+  border-left-color: transparent;
+}
+.altmonsterweek .tabs .item:last-child.active {
+  border-right-color: transparent;
 }
 .altmonsterweek .tabs .item.active {
-  text-decoration: underline;
+  background: transparent;
+  font-weight: 700;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-bottom-color: transparent;
+  cursor: default;
   text-shadow: none;
-  font-weight: 900;
+}
+.altmonsterweek .tabs .item.active:hover {
+  color: inherit;
 }
 .altmonsterweek .tab-content {
   overflow: hidden;

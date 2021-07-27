@@ -102,10 +102,8 @@
                 <ol class="item-list">
                     {{#each actor.moves as |item id|}}
                     <li class="item flexrow" data-item-id="{{item._id}}">
-                        <div class="image-div rollable">
-                            <div class="item-image" style="background-image: url({{item.img}});">
-                                <i class="fa fa-dice-d20"></i>
-                            </div>
+                        <div class="item-image" style="background-image: url({{item.img}});">
+                            <i class="fa fa-dice-d20"></i>
                         </div>
                         <!--img class="item-image" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/-->
                         <h4 class="item-name">
@@ -150,7 +148,10 @@
                 <ol class="item-list">
                     {{#each section.items as |item id|}}
                     <li class="item flexrow" data-item-id="{{item._id}}">
-                        <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+                        <div class="item-image" style="background-image: url({{item.img}});">
+                            <i class="fa fa-dice-d20"></i>
+                        </div>
+                        <!--img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/-->
                         <h4 class="item-name">
                             {{item.name}}
                             {{#each (split item.data.tags " ") as |tag|}}

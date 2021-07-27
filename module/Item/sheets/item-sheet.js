@@ -13,8 +13,8 @@ export class MotwItemSheet extends ItemSheet {
 			height: 480,
       tabs: [
         {
-          navSelector: ".sheet-tabs",
-          contentSelector: ".tab-content",
+          navSelector: ".motw-tabs",
+          contentSelector: ".sheet-body",
           initial: "description"
         }
       ]

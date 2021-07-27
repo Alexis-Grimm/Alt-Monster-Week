@@ -73,7 +73,7 @@
   }
 
   .sheet-header {
-    height: @sheet-header-height;
+    //height: @sheet-header-height;
     overflow: hidden;
     display: flex;
     flex-direction: row;
@@ -248,13 +248,16 @@
     color: #7a7971;
 
     .inventory-header {
-      margin: 2px 0;
-      padding: 0;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      background: rgba(0, 0, 0, 0.05);
-      border: 2px groove #eeede0;
-      font-weight: bold;
-      line-height: 24px;
+      margin: 8px 0 2px 0;
+      padding: 4px 0 2px 6px;
+      line-height: 12px;
+      font-size: 12px;
+      background: rgba(0,0,0,.1);
+      box-shadow: 0 0 3px inset rgba(0,0,0,.25);
+      border-radius: 5px;
 
       h3 {
         margin: 0 -5px 0 0;
@@ -266,9 +269,94 @@
       }
     }
 
-    // Item Control Buttons
+    .item-list {
+      list-style: none;
+      margin: 7px 0;
+      flex: 1;
+      padding: 0 9px 8px 0;
+      overflow-y: scroll;
+  
+      .item {
+        padding: 3px 0;
+        border-bottom: 1px solid #BBB;
+        display: flex;
+        align-items: center;
+        background: var(--faintest-color);
+  
+        .item-image {
+          flex: 0 0 24px;
+          height: 24px;
+          background-repeat: no-repeat;
+          background-size: cover;
+          border-radius: 5px 0px 0px 5px;
+          margin-right: 4px;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &:hover {
+            display: none !important
+          }
+          i {
+            color: @tertiary-color;
+            display: none;
+            &:hover {
+              display: normal !important
+            }
+          }
+        }
+
+        .item-name {
+          margin: 0;
+          color: #191813;
+    
+          // Hint that the name is clickable.
+          &:hover {
+            text-shadow: 0 0 10px red;
+          }
+
+          .chip {
+            display: inline-block;
+            margin: 0 2px 0 0;
+            padding: 0 3px;
+            font-size: 12px;
+            line-height: 18px;
+            border: 1px solid #999;
+            border-radius: 3px;
+            background: rgba(0, 0, 0, 0.05);
+          }
+        }
+      }
+  
+      .item-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        flex: 2;
+        justify-content: flex-start;
+      }
+  
+      .item-button {
+        line-height: 1;
+        font-size: 11px;
+        flex: none;
+        width: auto;
+      }
+      
+      // Item Dropdown Summary
+      .item-summary {
+        flex: 0 0 100%;
+        font-size: 12px;
+        line-height: 16px;
+        padding: 0.25em 0.5em;
+        color: #191813;
+      }
+    }
+
     .item-controls {
-      flex: 0 0 18px;
+      //flex: 0 0 18px;
+      flex: 0 0 36px;
       justify-content: flex-end;
 
       a {
@@ -280,83 +368,6 @@
   }
 
   /* Items List */
-  .item-list {
-    list-style: none;
-    margin: 7px 0;
-    padding: 0;
-    overflow-y: auto;
-
-    .item {
-      min-height: 30px;
-      line-height: 24px;
-      padding: 3px 0;
-      border-bottom: 1px solid #BBB;
-      align-items: stretch;
-
-      .image-div {
-        flex: 0 0 24px;
-        margin-right: 5px;
-        display: grid;
-        background-repeat: no-repeat;
-        background-size: cover;
-        .item-image i {
-          color: @tertiary-color;
-          display: none;
-        }
-      }
-    }
-
-    .item-name {
-      margin: 0;
-      color: #191813;
-
-      // Hint that the name is clickable.
-      &:hover {
-        text-shadow: 0 0 10px red;
-      }
-    }
-
-    .item-controls {
-      flex: 0 0 36px;
-    }
-
-    .item-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      align-items: center;
-      flex: 2;
-      justify-content: flex-start;
-    }
-
-    .item-button {
-      line-height: 1;
-      font-size: 11px;
-      flex: none;
-      width: auto;
-    }
-    
-    // Item Dropdown Summary
-    .item-summary {
-      flex: 0 0 100%;
-      font-size: 12px;
-      line-height: 16px;
-      padding: 0.25em 0.5em;
-      color: #191813;
-    }
-  }
-
-  /* Chips */
-  .chip {
-    display: inline-block;
-    margin: 0 2px 0 0;
-    padding: 0 3px;
-    font-size: 12px;
-    line-height: 18px;
-    border: 1px solid #999;
-    border-radius: 3px;
-    background: rgba(0, 0, 0, 0.05);
-  }
 }
 
 .altmonsterweek.sheet.actor {

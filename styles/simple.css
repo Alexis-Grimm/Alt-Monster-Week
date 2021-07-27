@@ -21,7 +21,6 @@
 .altmonsterweek {
   /* Sheet Tabs */
   /* Items List */
-  /* Chips */
 }
 .altmonsterweek .window-content {
   height: 100%;
@@ -48,7 +47,6 @@
   color: #880808;
 }
 .altmonsterweek .sheet-header {
-  height: 110px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -207,13 +205,16 @@
   color: #7a7971;
 }
 .altmonsterweek .inventory-list .inventory-header {
-  margin: 2px 0;
-  padding: 0;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  background: rgba(0, 0, 0, 0.05);
-  border: 2px groove #eeede0;
-  font-weight: bold;
-  line-height: 24px;
+  margin: 8px 0 2px 0;
+  padding: 4px 0 2px 6px;
+  line-height: 12px;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 3px inset rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
 }
 .altmonsterweek .inventory-list .inventory-header h3 {
   margin: 0 -5px 0 0;
@@ -223,71 +224,50 @@
   font-weight: 700;
   font-size: 16px;
 }
-.altmonsterweek .inventory-list .item-controls {
-  flex: 0 0 18px;
-  justify-content: flex-end;
-}
-.altmonsterweek .inventory-list .item-controls a {
-  flex: 0 0 22px;
-  font-size: 12px;
-  text-align: center;
-}
-.altmonsterweek .item-list {
+.altmonsterweek .inventory-list .item-list {
   list-style: none;
   margin: 7px 0;
-  padding: 0;
-  overflow-y: auto;
+  flex: 1;
+  padding: 0 9px 8px 0;
+  overflow-y: scroll;
 }
-.altmonsterweek .item-list .item {
-  min-height: 30px;
-  line-height: 24px;
+.altmonsterweek .inventory-list .item-list .item {
   padding: 3px 0;
   border-bottom: 1px solid #BBB;
-  align-items: stretch;
+  display: flex;
+  align-items: center;
+  background: var(--faintest-color);
 }
-.altmonsterweek .item-list .item .image-div {
+.altmonsterweek .inventory-list .item-list .item .item-image {
   flex: 0 0 24px;
-  margin-right: 5px;
-  display: grid;
+  height: 24px;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 5px 0px 0px 5px;
+  margin-right: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.altmonsterweek .item-list .item .image-div .item-image i {
+.altmonsterweek .inventory-list .item-list .item .item-image:hover {
+  display: none !important;
+}
+.altmonsterweek .inventory-list .item-list .item .item-image i {
   color: rgba(0, 0, 0, 0.4);
   display: none;
 }
-.altmonsterweek .item-list .item-name {
+.altmonsterweek .inventory-list .item-list .item .item-image i:hover {
+  display: normal !important;
+}
+.altmonsterweek .inventory-list .item-list .item .item-name {
   margin: 0;
   color: #191813;
 }
-.altmonsterweek .item-list .item-name:hover {
+.altmonsterweek .inventory-list .item-list .item .item-name:hover {
   text-shadow: 0 0 10px red;
 }
-.altmonsterweek .item-list .item-controls {
-  flex: 0 0 36px;
-}
-.altmonsterweek .item-list .item-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  flex: 2;
-  justify-content: flex-start;
-}
-.altmonsterweek .item-list .item-button {
-  line-height: 1;
-  font-size: 11px;
-  flex: none;
-  width: auto;
-}
-.altmonsterweek .item-list .item-summary {
-  flex: 0 0 100%;
-  font-size: 12px;
-  line-height: 16px;
-  padding: 0.25em 0.5em;
-  color: #191813;
-}
-.altmonsterweek .chip {
+.altmonsterweek .inventory-list .item-list .item .item-name .chip {
   display: inline-block;
   margin: 0 2px 0 0;
   padding: 0 3px;
@@ -296,6 +276,36 @@
   border: 1px solid #999;
   border-radius: 3px;
   background: rgba(0, 0, 0, 0.05);
+}
+.altmonsterweek .inventory-list .item-list .item-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  flex: 2;
+  justify-content: flex-start;
+}
+.altmonsterweek .inventory-list .item-list .item-button {
+  line-height: 1;
+  font-size: 11px;
+  flex: none;
+  width: auto;
+}
+.altmonsterweek .inventory-list .item-list .item-summary {
+  flex: 0 0 100%;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0.25em 0.5em;
+  color: #191813;
+}
+.altmonsterweek .inventory-list .item-controls {
+  flex: 0 0 36px;
+  justify-content: flex-end;
+}
+.altmonsterweek .inventory-list .item-controls a {
+  flex: 0 0 22px;
+  font-size: 12px;
+  text-align: center;
 }
 .altmonsterweek.sheet.actor {
   min-width: 560px;

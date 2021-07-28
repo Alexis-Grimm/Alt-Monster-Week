@@ -8,7 +8,7 @@
     },
     "creature": {
       "harm": {
-        "value": 0,
+        "value": 8,
         "min": 0,
         "max": 8
       },
@@ -18,7 +18,7 @@
   "hunter": {
     "templates": ["common", "creature"],
     "luck": {
-      "value": 0,
+      "value": 7,
       "min": 0,
       "max": 7
     },
@@ -26,6 +26,10 @@
       "value": 0,
       "min": 0,
       "max": 5
+    },
+    "wealth": {
+      "value": 0,
+      "min": 0
     },
     "level": 0,
     "ratings": {

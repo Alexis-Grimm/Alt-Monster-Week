@@ -114,13 +114,30 @@
           font-family: @label-font;
         }
       }
-      h1.charname {
+      div.charname {
+        display: flex;
+        justify-content: space-between;
         margin-bottom: .5rem;
         border-bottom: 1px solid @faint-color;
-        input {
+        div.level {
+          display: flex;
+        }
+        input.charname {
           width: 50%;
           height: 100%;
           margin: 1px;
+          background: none;
+          font-family: @label-font;
+          font-size: xx-large;
+        }
+        input.level {
+          width: 25px;
+          height: 100%;
+          font-family: @label-font;
+          font-size: xx-large;
+        }
+        label {
+          margin: 1px 5px 1px 1px;
           background: none;
           font-family: @label-font;
           font-size: xx-large;

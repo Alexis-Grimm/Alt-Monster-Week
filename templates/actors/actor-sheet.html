@@ -4,7 +4,13 @@
     <header class="sheet-header">
         <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
         <div class="header-fields">
-            <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" maxlength="40"/></h1>
+            <div class="charname">
+                <input class="charname" name="name" type="text" value="{{actor.name}}" placeholder="Name" maxlength="40"/>
+                <div class="level">
+                    <label for="level">Lv.</label>
+                    <input class="level" name="data.level" type="number" value="{{data.data.level}}" placeholder="1" maxlength="2"/>
+                </div>
+            </div>
             {{!-- Ratings: Cool, Tough, etc. --}}
             <div class="flexrow ratings">
                 {{!-- TODO: Is the order stable? --}}
@@ -55,7 +61,7 @@
                 </a>
             </div>
         </div>
-        <div>
+        <!--div>
             <label class="header">{{localize "MOTW.Experience"}}</label>
             <div class="track-block">
                 <a class="rating-icon forget" title="Remove Experience" data="Forget">
@@ -66,6 +72,12 @@
                 <a class="rating-icon learn" title="Mark Experience" data="Learn">
                     <i class="fas fa-pencil-alt icon"></i>
                 </a>
+            </div>
+        </div-->
+        <div>
+            <label for="wealth" class="header">Wealth</label>
+            <div class="wealth input">
+                <input name="data.wealth.value" type="number" value="{{data.data.wealth.value}}" placeholder="0" maxLength="6"/>
             </div>
         </div>
     </section>

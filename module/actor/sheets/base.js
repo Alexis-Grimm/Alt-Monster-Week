@@ -185,7 +185,6 @@ export class MotwActorSheet extends ActorSheet {
         case 'Learn':
           valueName = "experience"; delta = 1; break;
       }
-      //const delta;
       this.actor.modifyValue(valueName, delta);
     });
 
@@ -269,7 +268,7 @@ export class MotwActorSheet extends ActorSheet {
   _updateObject(event, formData) {
     // Lets us intercept edits before sending to the server.
     // formData contains name/value pairs from <input> elements etc. in the form.
-
+    //console.log("I'm doing something?", formData);
     // Update the Actor
     return this.object.update(formData);
   }

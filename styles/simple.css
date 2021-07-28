@@ -87,14 +87,31 @@
   font-size: x-large;
   font-family: "3rd Man Font";
 }
-.altmonsterweek .sheet-header .header-fields h1.charname {
+.altmonsterweek .sheet-header .header-fields div.charname {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 0.5rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-.altmonsterweek .sheet-header .header-fields h1.charname input {
+.altmonsterweek .sheet-header .header-fields div.charname div.level {
+  display: flex;
+}
+.altmonsterweek .sheet-header .header-fields div.charname input.charname {
   width: 50%;
   height: 100%;
   margin: 1px;
+  background: none;
+  font-family: "3rd Man Font";
+  font-size: xx-large;
+}
+.altmonsterweek .sheet-header .header-fields div.charname input.level {
+  width: 25px;
+  height: 100%;
+  font-family: "3rd Man Font";
+  font-size: xx-large;
+}
+.altmonsterweek .sheet-header .header-fields div.charname label {
+  margin: 1px 5px 1px 1px;
   background: none;
   font-family: "3rd Man Font";
   font-size: xx-large;

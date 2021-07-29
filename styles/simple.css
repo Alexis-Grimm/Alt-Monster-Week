@@ -133,6 +133,14 @@
   text-shadow: none;
   color: #880808;
 }
+.altmonsterweek .hunter-status div.wealth {
+  flex: 0.8;
+  margin: 0 25px 0 0;
+}
+.altmonsterweek .hunter-status div.wealth .wealth-input {
+  font-family: "3rd Man Font";
+  font-size: x-large;
+}
 .altmonsterweek .hunter-status label.header {
   font-weight: 600;
   text-transform: uppercase;
@@ -208,7 +216,7 @@
 }
 .altmonsterweek .editor,
 .altmonsterweek .editor-content {
-  height: 100%;
+  height: 100px;
 }
 .altmonsterweek img {
   background-color: black;

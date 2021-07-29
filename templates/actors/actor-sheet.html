@@ -138,7 +138,10 @@
 
         {{!-- Background Tab --}}
         <div class="tab background" data-group="primary" data-tab="background">
-            {{editor content=data.data.background target="data.background" button=true owner=owner editable=editable}}
+            <article>
+                <div class="detail-label">Background</div>
+                {{editor content=data.data.background target="data.background" button=true owner=owner editable=editable}}
+            </article>
         </div>
 
         {{!-- Owned Gear Tab --}}

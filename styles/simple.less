@@ -187,10 +187,6 @@
     }
   }
 
-  .sheet-body {
-    //background-color: @background-color;
-  }
-
   input {
     padding: 0;
     border: 1px solid transparent;
@@ -248,16 +244,93 @@
     }
   }
 
-  .tab-content {
+  .sheet-body {
     overflow: hidden;
+    flex: inherit;
     .tab {
-      height: 100%;
+      height: 60%;
       overflow-y: auto;
     }
   }
 
-  .editor, .editor-content {
-    height: 100px;
+  article {
+    .detail-label {
+      font-weight: 700;
+      padding: 8px;
+      border-bottom: 1px solid @light-color;
+      padding-bottom: .25rem;
+      //margin-bottom: .5rem;
+      font-family: @test-font;
+    }
+    .editor, .editor-content {
+      display: flex;
+      flex-direction: column;
+      min-height: calc(55%);
+      padding: 0px 4px;
+      position: static;
+      .editor-edit {
+        background: transparent;
+        top: 0;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        i {
+          font-size: 1em;
+          position: absolute;
+          right: -2px;
+          top: 5px;
+          cursor: pointer;
+          text-shadow: none;
+        }
+      }
+      .tox { 
+        .tox-tbtn {
+          width: 24px;
+          height: 24px;
+        }
+        .tox-tbtn--select {
+          width: auto;
+        }
+        .tox-toolbar__group {
+          padding: 0;
+        }
+      }
+      .tox-tinymce {
+        .tox-tbtn[title="Formats"] {
+          width: 90px;
+        }
+      }
+      .tox.tox-tinymce {
+        border: none;
+        flex: 1;
+        min-height: 100px;
+      }
+      .tox-toolbar__primary, .tox-toolbar-overlord {
+        background: transparent;
+        background-color: transparent;
+      }
+      .tox-editor-header {
+        border-bottom: 1px solid var(--faint-color);
+      }
+    }
+    &:hover .editor .editor-edit {
+      display: block;
+      padding: 0;
+      border: none;
+      box-shadow: none;
+    }
+    background: rgba(0,0,0,.1);
+    box-shadow: 0 0 3px inset rgba(0,0,0,.25);
+    border-radius: 5px;
+    flex: 1;
+    margin: 8px;
+    position: relative;
+  }
+
+  .editor {
+    &:hover, &:focus {
+      cursor: default;
+    }
   }
 
   img {

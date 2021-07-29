@@ -46,7 +46,9 @@
     <section class="sheet-body flexrow">
         {{!-- Description Tab --}}
         <div class="tab" data-group="primary" data-tab="description">
-            {{editor content=data.data.description target="data.description" button=true owner=owner editable=editable}}
+            <article>
+                {{editor content=data.data.description target="data.description" button=true owner=owner editable=editable}}
+            </article>
         </div>
         <div class="tab" data-group="primary" data-tab="details">
             <i class="fas fa-anchor icon"></i>
